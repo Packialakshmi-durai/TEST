@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script>
+           
+            function validateForm() {
+              var user = document.forms["myForm"]["username"].value;
+            
+              if (user == "") {
+                alert("Name and Password must be filled out");
+          
+                return false;
+              }
+            }
+            </script>
+    
+    </head>
+    <body>
+      <div>
+        <form name="myForm" action="/chat" onsubmit="return validateForm()" method="post">
+          <label >UserName:</label><input type="text" name="username" required>
+          <br>
+          <br>
+          <label>Password:</label> <input type="password" name="password" required>
+          <input type="submit" value="Submit" name="submit">
+        </form>
+      </div>
+        </body>
+</html>

@@ -1,0 +1,53 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+
+
+<form onsubmit="return send_message();">
+    <input id="message" placeholder="Enter the Message" name="message" />
+    <input type="submit" value="Send" name="send">
+</form>
+
+<div class="listMessage">
+    <ul id="messages"></ul>
+</div>
+
+<script>
+    var server = "http://localhost:3000";
+    var io = io(server);
+
+    function send_message() {
+        var message = document.getElementById("message");
+        io.emit("new_chat", message.value)
+        return false;
+    }
+
+    $.ajax({
+        url: server + "/get_message",
+        method: "GET",
+        success: function (response) {
+            console.log(response)
+            var messages = document.getElementById("messages")
+            for (var a = 0; a < response.length; a++) {
+                var li = document.createElement("li");
+                li.innerHTML = response[a].message;
+                messages.appendChild(li);
+
+            }
+
+        }
+    })
+
+
+    io.on("new_chat", function (data) {
+        console.log("server says" + data)
+
+        var li = document.createElement("li");
+        li.innerHTML = data;
+
+        var messages = document.getElementById("messages");
+        messages.appendChild(li);
+
+    })
+
+</script>

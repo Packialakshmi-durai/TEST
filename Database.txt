@@ -1,0 +1,25 @@
+///Mysql database tables
+
+create table usertable
+ (
+ UserId int(10) NOT NULL AUTO_INCREMENT,
+ UserName varchar(255) DEFAULT NULL,
+ Password varchar(255) DEFAULT NULL,
+ primary key(UserId)
+ );
+
+ create table messages
+ (
+ id int(10) NOT NULL AUTO_INCREMENT,
+ message TEXT NOT NULL,
+ primary key(id)
+ );
+
+ //connection setup in express code
+
+ var connection=mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '######',
+    database: 'task'
+})

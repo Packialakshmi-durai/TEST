@@ -1,0 +1,85 @@
+body{
+    margin-top: 10%;
+    margin-left: 10%;
+    background-color: rebeccapurple;
+}
+
+input[name="submit"] {
+    width: 25%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    margin-left: 20%;
+    cursor: pointer;
+  }
+  input[name="username"], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[name="password"], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[name="message"]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[name="send"] {
+    width: 25%;
+    background-color:black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10%;
+    cursor: pointer;
+  }
+  input[name="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  label{
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+  }
+  .listMessage{
+      margin-left: 1%;
+      background-color:aquamarine;
+      overflow-y: scroll;
+      width: 45%;
+      
+  }
+  ul li:nth-child(even) {  
+    color:burlywood;
+    width: 50%;
+    background-color: white;
+    color:brown;
+  }
+  ul{
+      margin-left: 10%;
+  }
